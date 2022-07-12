@@ -1,0 +1,27 @@
+.mobileMenu
+  .mobileMenu-header
+    .mobileMenu-header__toggle
+      button.burger
+        svg(width='24' height='24')
+          use(xlink:href='img/sprites/sprite.svg#ic_close')
+  .mobileMenu-nav
+    ul.mobileMenu-nav__ul
+      li
+        a(href='#about')
+          svg(width='24' height='24')
+            use(xlink:href='img/sprites/sprite.svg#ic_account')
+          span About me
+      span.divider
+      li
+        a(href='#projects')
+          svg(width='24' height='24')
+            use(xlink:href='img/sprites/sprite.svg#ic_apps')
+          span Projects
+      span.divider
+  .mobileMenu-footer
+    ul.mobileMenu-nav__ul
+      li
+        a(style='width: 100%;cursor:pointer;')
+          svg(width='24' height='24')
+            use(xlink:href='img/sprites/sprite.svg#ic_dark')
+          span Dark mode

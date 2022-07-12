@@ -1,0 +1,213 @@
+@import "helpers/variables";
+@import "helpers/mixins";
+@import "helpers/functions";
+@import "vendor/libs";
+@import "base/fonts";
+@import "base/general";
+@import "../blocks/components/components";
+@import "../blocks/modules/modules";
+
+@import "../blocks/components/edit-content/edit-content.scss";
+
+.about-block{
+  padding-top: 24px;
+  padding-bottom: 64px;
+
+  .container{
+    max-width: 1124px;
+  }
+
+  &__items{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -8px;
+    width: calc(100% + 16px);
+  }
+
+  &__item{
+    width: calc(100% / 2 - 16px);
+    padding: 24px;
+    background: #fff;
+    border-radius: 8px;
+    margin: 0 8px 16px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-transition: background .5s;
+    -o-transition: background .5s;
+    transition: background .5s;
+    border: 1px solid #e1e3e1;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+
+    @media screen and (max-width: 768px) {
+
+      width: calc(100% - 16px);
+
+
+    }
+
+    .title{
+      font-size: 18px;
+      line-height: 24px;
+      color: #1f1f1f;
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+
+    .title{
+      font-size: 18px;
+      line-height: 24px;
+      color: #1f1f1f;
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+
+    .box-items{
+      width: 100%;
+
+      &--small{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        margin: 0 -8px;
+        width: calc(100% + 16px);
+      }
+
+    }
+
+    .box{
+      background: #f2f6fc;
+      border-radius: 8px;
+      padding: 16px;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      margin-bottom: 8px;
+
+      &--small{
+        flex-basis: calc(100% / 3 - 16px);
+        margin: 8px !important;
+        justify-content: center;
+        flex-grow: 1;
+
+        .box-text{
+          width: 100% !important;
+          text-align: center;
+        }
+
+      }
+
+      &:last-child{
+        margin-bottom: 0;
+      }
+
+      .box-icon{
+        margin-right: 16px;
+        width: 48px;
+        height: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        mix-blend-mode: multiply;
+      }
+
+      .box-text{
+        margin-right: auto;
+
+        &__caption{
+          font-size: 16px;
+          line-height: 24px;
+          font-weight: 600;
+          opacity: 0.7;
+
+        }
+
+        &__name{
+          font-size: 18px;
+          line-height: 26px;
+          font-weight: 700;
+          margin-right: auto;
+        }
+
+      }
+
+      .box-address{
+        text-align: right;
+        &__since{
+          font-size: 14px;
+          line-height: 20px;
+          font-weight: 600;
+          opacity: 0.8;
+        }
+
+        &__location{
+          display: flex;
+          align-items: center;
+          justify-content: flex-end;
+          font-size: 16px;
+          line-height: 24px;
+          font-weight: 600;
+
+          svg{
+            margin-right: 4px;
+            width: 20px;
+            height: 20px;
+          }
+
+        }
+      }
+
+      @media screen and (max-width: 1024px) {
+
+        flex-wrap: wrap;
+
+        .box-text{
+          width: 100%;
+          max-width: calc(100% - 64px);
+        }
+
+        .box-address{
+          text-align: left;
+          margin-top: 8px;
+          width: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding-left: 64px;
+
+          &__since{
+            margin-right: 16px;
+          }
+
+        }
+
+      }
+
+      @media screen and (max-width: 480px) {
+
+        .box-icon{
+          margin-bottom: 16px;
+        }
+
+        .box-text{
+          width: 100%;
+          max-width: 100%;
+        }
+
+        .box-address{
+          padding-left: 0;
+        }
+
+      }
+
+    }
+
+  }
+
+}

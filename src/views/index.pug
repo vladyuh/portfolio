@@ -1,0 +1,138 @@
+extends layouts/default
+include helpers/mixins
+include ../blocks/components/breadcrumbs/breadcrumbs.pug
+include ../blocks/components/form/form.pug
+include ../blocks/components/checkbox/checkbox.pug
+include ../blocks/components/headers/headers.pug
+include ../blocks/components/table/table.pug
+include ../blocks/components/popup/popup.pug
+
+
+block variables
+    - const title = "Главная"
+
+block content
+
+    .pageTitle
+        .container
+            .pageTitle__wrp
+                .pageTitle__image(style='background-image: url(https://etooools.herokuapp.com/media/backs/1.jpg)')
+                h1.section-h1.pageTitle__text
+                    | Hello,
+                    br
+                    |  I'm Vlad Yukhnovski
+                .desc
+                    | Front-end developer at Promicom Develop LLC.
+
+    .page-nav
+        .container
+            .page-nav__links
+                a(href="#about").page-nav__link About me
+                a(href="#projects").page-nav__link Projects
+
+
+    .about-block#about
+        .container
+            .about-block__items
+                .about-block__item
+                    .title Education
+                    .box-items
+                        .box
+                            .box-icon: img(src="/img/common/msu.jpg" width="48" height="48")
+                            .box-text
+                                .box-text__caption Mogilev State University
+                                .box-text__name Computer Science
+                            .box-address
+                                .box-address__since Sept. 2015 - Jul. 2019
+                                .box-address__location
+                                    +icons("#ic_location",24)
+                                    span Mogilev
+                        .box
+                            .box-icon: +icons('#ic_web', 36)
+                            .box-text
+                                .box-text__caption Internet
+                                .box-text__name Self-learning and others
+                            .box-address
+                                .box-address__since 2019 - Present
+                .about-block__item
+                    .title Experience
+                    .box-items
+                        .box
+                            .box-icon: +icons('#promicom_logo', 36)
+                            .box-text
+                                .box-text__caption Front-end developer
+                                .box-text__name Promicom Group
+                            .box-address
+                                .box-address__since Sept. 2019 - Feb. 2020
+                                .box-address__location
+                                    +icons("#ic_location",24)
+                                    span Mogilev
+                        .box
+                            .box-icon: +icons('#promicom_logo', 36)
+                            .box-text
+                                .box-text__caption Front-end developer
+                                .box-text__name Promicom Develop LLC.
+                            .box-address
+                                .box-address__since Feb. 2020 - Present
+                                .box-address__location
+                                    +icons("#ic_location",24)
+                                    span Mogilev
+                .about-block__item
+                    .title Skills
+                    .box-items.box-items--small
+                        .box.box--small
+                            .box-text
+                                .box-text__name HTML
+                        .box.box--small
+                            .box-text
+                                .box-text__name Pug
+                        .box.box--small
+                            .box-text
+                                .box-text__name CSS
+                        .box.box--small
+                            .box-text
+                                .box-text__name SCSS
+                        .box.box--small
+                            .box-text
+                                .box-text__name JS
+                        .box.box--small
+                            .box-text
+                                .box-text__name Vue.js
+                        .box.box--small
+                            .box-text
+                                .box-text__name jQuery
+                        .box.box--small
+                            .box-text
+                                .box-text__name Gulp
+                .about-block__item
+                    .title Tools
+                    .box-items.box-items--small
+                        .box.box--small
+                            .box-text
+                                .box-text__name VS Code
+                        .box.box--small
+                            .box-text
+                                .box-text__name WebStorm
+                        .box.box--small
+                            .box-text
+                                .box-text__name Figma
+                        .box.box--small
+                            .box-text
+                                .box-text__name Photoshop
+                        .box.box--small
+                            .box-text
+                                .box-text__name Chrome
+                        .box.box--small
+                            .box-text
+                                .box-text__name MDN
+                        .box.box--small
+                            .box-text
+                                .box-text__name Git
+                        .box.box--small
+                            .box-text
+                                .box-text__name NPM
+
+
+    +callbackPopup()
+block scripts
+    script(src="js/main.js")
