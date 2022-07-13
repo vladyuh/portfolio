@@ -83,7 +83,7 @@ if ("loading" in HTMLImageElement.prototype) {
 }
 else {
     const script = document.createElement("script");
-    script.src = "/js/lazysizes.min.js";
+    script.src = "js/lazysizes.min.js";
     document.body.appendChild(script);
 }
 
@@ -148,7 +148,7 @@ document.querySelector(".scroll-top").addEventListener("click", function (){
 window.addEventListener("load", function () {
 
     var select = document.createElement("script");
-    select.src = "/js/select.min.js";
+    select.src = "js/select.min.js";
     select.onload = function () {
         const selectCustom = new customSelect({
             selector: "select"
@@ -158,7 +158,7 @@ window.addEventListener("load", function () {
     document.body.appendChild(select);
 
     var scroll = document.createElement("script");
-    scroll.src = "/js/scroll.min.js";
+    scroll.src = "js/scroll.min.js";
     scroll.onload = function () {
         let smoothScroll = new scrollToSmooth('a', {
             offset: document.querySelector('header')
