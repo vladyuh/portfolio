@@ -3,13 +3,19 @@ footer
         .footer
             .footer-desc
                 .footer-desc__logo
-                    img(src='img/common/image.jpg' alt='' width='48' height='48')
+                    picture
+                        source(srcset="img/common/image.webp" type="image/webp")
+                        img(loading="lazy" class="lazyload" data-src='img/common/image.jpg' alt='' width='48' height='48')
                 .footer-desc__text
                     p.
-                        I'm Vlad Yukhnovski, front-end developer at Promicom Develop LLC.<br>
-                        This website was created to showcase my projects. <br>
-                        Interested in work together? Let's talk
+                        Этот веб-сайт был создан для демонстрации реализованных мною проектов.<br>
+                        Заинтересованы поработать вместе? Давайте пообщаемся
+                ul.footer-desc__links
+                    li: a(href="https://github.com/vladyuh") GitHub
+                    li: a(href="https://www.linkedin.com/in/vlad-yukhnovski-247787239/") LinkedIn
+                    li: a(href="https://t.me/valdis_1997") Telegram
+                    //li: a(href="mailto:vladuks123.vv@gmail.com") Email
             .footer-feedback
                 ul
                     li
-                        a(href='#feedback') Feedback
+                        a(href='mailto:vladuks123.vv@gmail.com') Обратная связь

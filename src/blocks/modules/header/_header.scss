@@ -9,7 +9,8 @@ header {
     -o-transition: .5s;
     transition: 0.5s;
 
-    &.scroll-down {
+    &.scroll-down,
+    &.scroll-up{
         background: #f2f6fc;
     }
 

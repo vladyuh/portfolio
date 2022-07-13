@@ -105,7 +105,7 @@ const isScrollingDown = () => {
 const nav = document.querySelector("header");
 
 function handleNavScroll() {
-    if (isScrollingDown() && !nav.contains(document.activeElement)) {
+    if (isScrollingDown()) {
         nav.classList.add("scroll-down");
         nav.classList.remove("scroll-up");
     } else {
@@ -113,7 +113,7 @@ function handleNavScroll() {
         nav.classList.remove("scroll-down");
     }
 
-    if (window.scrollY || window.pageYOffset === 0) {
+    if (window.pageYOffset === 0) {
         nav.classList.remove("scroll-up");
     }
 
@@ -156,6 +156,16 @@ window.addEventListener("load", function () {
         selectCustom.init();
     };
     document.body.appendChild(select);
+
+    var scroll = document.createElement("script");
+    scroll.src = "/js/scroll.min.js";
+    scroll.onload = function () {
+        let smoothScroll = new scrollToSmooth('a', {
+            offset: document.querySelector('header')
+        });
+        smoothScroll.init();
+    };
+    document.body.appendChild(scroll);
 });
 
 //open popup
@@ -178,3 +188,23 @@ popupClose.forEach(function (element){
         }
     });
 });
+
+(function(){
+    function onTabClick(event){
+        var actives = document.querySelectorAll('.is-active');
+
+        for (var i=0; i < actives.length; i++){
+            actives[i].classList.remove('is-active');
+        }
+
+        event.target.classList.add('is-active');
+        document.getElementById(event.target.href.split('#')[1]).classList.add('is-active');
+    }
+
+    var el = document.querySelectorAll('.page-nav__link, .mobileMenu-nav__ul a');
+    el.forEach(function (em){
+        em.addEventListener('click', onTabClick, false);
+    });
+
+
+})();

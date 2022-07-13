@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Главная</title>
+    <title>Портфолио</title>
     <meta name="theme-color" content="#000">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -23,10 +23,11 @@
     <link rel="apple-touch-icon" sizes="167x167" href="img/favicons/apple-touch-icon-167x167.png">
     <link rel="apple-touch-icon" sizes="180x180" href="img/favicons/apple-touch-icon-180x180.png">
     <link rel="apple-touch-icon" sizes="1024x1024" href="img/favicons/apple-touch-icon-1024x1024.png">
-    <link rel="stylesheet" href="styles/main.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.min.css">
+    <link rel="prefetch" href="img/sprites/sprite.svg" as="image" crossorigin="">
+    <link rel="preload" href="fonts/ProductSans-Bold.woff" as="font" crossorigin="">
+    <link rel="preload" href="fonts/ProductSans-Medium.woff" as="font" crossorigin="">
+    <link rel="preload" href="fonts/ProductSans-Regular.woff" as="font" crossorigin="">
   </head>
   <body class="perf-no-animation page">
     <header>
@@ -39,11 +40,10 @@
               </svg>
             </button>
           </div>
-          <div class="header-darkMode">
-            <svg width="24" height="24">
-              <use xlink:href="img/sprites/sprite.svg#ic_dark"></use>
-            </svg>
-          </div>
+          <!--.header-darkMode
+          svg(width='24' height='24')
+              use(xlink:href='img/sprites/sprite.svg#ic_dark')
+          -->
         </div>
       </div>
     </header>
@@ -62,56 +62,56 @@
           <li><a href="#about">
               <svg width="24" height="24">
                 <use xlink:href="img/sprites/sprite.svg#ic_account"></use>
-              </svg><span>About me</span></a></li><span class="divider"></span>
+              </svg><span>Обо мне</span></a></li><span class="divider"></span>
           <li><a href="#projects">
               <svg width="24" height="24">
                 <use xlink:href="img/sprites/sprite.svg#ic_apps"></use>
-              </svg><span>Projects</span></a></li><span class="divider"></span>
+              </svg><span>Проекты</span></a></li><span class="divider"></span>
         </ul>
       </div>
-      <div class="mobileMenu-footer">
-        <ul class="mobileMenu-nav__ul">
-          <li><a style="width: 100%;cursor:pointer;">
-              <svg width="24" height="24">
-                <use xlink:href="img/sprites/sprite.svg#ic_dark"></use>
-              </svg><span>Dark mode</span></a></li>
-        </ul>
-      </div>
+      <!--.mobileMenu-footer
+      ul.mobileMenu-nav__ul
+        li
+          a(style='width: 100%;cursor:pointer;')
+            svg(width='24' height='24')
+              use(xlink:href='img/sprites/sprite.svg#ic_dark')
+            span Темная тема
+      -->
     </div>
     <main>
       <div class="pageTitle">
         <div class="container">
           <div class="pageTitle__wrp">
             <div class="pageTitle__image" style="background-image: url(https://etooools.herokuapp.com/media/backs/1.jpg)"></div>
-            <h1 class="section-h1 pageTitle__text">Hello,<br> I'm Vlad Yukhnovski</h1>
-            <div class="desc">Front-end developer at Promicom Develop LLC.</div>
+            <h1 class="section-h1 pageTitle__text">Привет,<br> Я Влад Юхновский</h1>
+            <div class="desc">Фронтенд разработчик, ООО&nbsp;"Промиком Девелоп"</div>
           </div>
         </div>
       </div>
       <div class="page-nav">
         <div class="container">
-          <div class="page-nav__links"><a class="page-nav__link" href="#about">About me</a><a class="page-nav__link" href="#projects">Projects</a></div>
+          <div class="page-nav__links"><a class="page-nav__link is-active" href="#about">Обо мне</a><a class="page-nav__link" href="#projects">Проекты</a></div>
         </div>
       </div>
-      <div class="about-block" id="about">
+      <div class="about-block page-block is-active" id="about">
         <div class="container">
           <div class="about-block__items">
             <div class="about-block__item">
-              <div class="title">Education</div>
+              <div class="title">Образование</div>
               <div class="box-items">
                 <div class="box">
-                  <div class="box-icon"><img src="/img/common/msu.jpg" width="48" height="48"></div>
+                  <div class="box-icon">
+                    <picture>
+                      <source srcset="img/common/msu.webp" type="image/webp"><img class="lazyload" loading="lazy" data-src="img/common/msu.jpg" width="48" height="48">
+                    </picture>
+                  </div>
                   <div class="box-text">
-                    <div class="box-text__caption">Mogilev State University</div>
-                    <div class="box-text__name">Computer Science</div>
+                    <div class="box-text__caption">МГУ им. А.А. Кулешова</div>
+                    <div class="box-text__name">Информатика</div>
                   </div>
                   <div class="box-address">
-                    <div class="box-address__since">Sept. 2015 - Jul. 2019</div>
-                    <div class="box-address__location">
-                      <svg width="24" height="24">
-                        <use xlink:href="/img/sprites/sprite.svg#ic_location"></use>
-                      </svg><span>Mogilev</span>
-                    </div>
+                    <div class="box-address__since">Сент. 2015 - Июл. 2019</div>
+                    <div class="box-address__location"></div>
                   </div>
                 </div>
                 <div class="box">
@@ -121,17 +121,18 @@
                     </svg>
                   </div>
                   <div class="box-text">
-                    <div class="box-text__caption">Internet</div>
-                    <div class="box-text__name">Self-learning and others</div>
+                    <div class="box-text__caption">Интернет</div>
+                    <div class="box-text__name">Самообучение и т.д</div>
                   </div>
                   <div class="box-address">
-                    <div class="box-address__since">2019 - Present</div>
+                    <div class="box-address__since">2019 - н.в.</div>
+                    <div class="box-address__location"></div>
                   </div>
                 </div>
               </div>
             </div>
             <div class="about-block__item">
-              <div class="title">Experience</div>
+              <div class="title">Опыт</div>
               <div class="box-items">
                 <div class="box">
                   <div class="box-icon">
@@ -140,15 +141,15 @@
                     </svg>
                   </div>
                   <div class="box-text">
-                    <div class="box-text__caption">Front-end developer</div>
-                    <div class="box-text__name">Promicom Group</div>
+                    <div class="box-text__caption">Фронтенд разработчик</div>
+                    <div class="box-text__name">Промиком Групп</div>
                   </div>
                   <div class="box-address">
-                    <div class="box-address__since">Sept. 2019 - Feb. 2020</div>
+                    <div class="box-address__since">Сент. 2019 - Фев. 2020</div>
                     <div class="box-address__location">
                       <svg width="24" height="24">
                         <use xlink:href="/img/sprites/sprite.svg#ic_location"></use>
-                      </svg><span>Mogilev</span>
+                      </svg><span>Могилев</span>
                     </div>
                   </div>
                 </div>
@@ -159,22 +160,22 @@
                     </svg>
                   </div>
                   <div class="box-text">
-                    <div class="box-text__caption">Front-end developer</div>
-                    <div class="box-text__name">Promicom Develop LLC.</div>
+                    <div class="box-text__caption">Фронтенд разработчик</div>
+                    <div class="box-text__name">Промиком Девелоп</div>
                   </div>
                   <div class="box-address">
-                    <div class="box-address__since">Feb. 2020 - Present</div>
+                    <div class="box-address__since">Фев. 2020 - н.в.</div>
                     <div class="box-address__location">
                       <svg width="24" height="24">
                         <use xlink:href="/img/sprites/sprite.svg#ic_location"></use>
-                      </svg><span>Mogilev</span>
+                      </svg><span>Могилев</span>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
             <div class="about-block__item">
-              <div class="title">Skills</div>
+              <div class="title">Навыки</div>
               <div class="box-items box-items--small">
                 <div class="box box--small">
                   <div class="box-text">
@@ -219,7 +220,7 @@
               </div>
             </div>
             <div class="about-block__item">
-              <div class="title">Tools</div>
+              <div class="title">Инструменты</div>
               <div class="box-items box-items--small">
                 <div class="box box--small">
                   <div class="box-text">
@@ -266,6 +267,242 @@
           </div>
         </div>
       </div>
+      <div class="projects-block page-block" id="projects">
+        <div class="container">
+          <div class="projects-block__items">
+            <div class="projects-block__item">
+              <div class="image">
+                <picture>
+                  <source srcset="/img/projects/1.webp" type="image/webp"><img class="lazyload" loading="lazy" data-src="/img/projects/1.png">
+                </picture>
+              </div>
+              <div class="title">Fiesta LED</div>
+              <div class="desc">Сайт для компании FiestaLED.Компания FiestaLED производит светодиодные экраны для внутренней и наружной рекламы.</div><a class="link" href="https://fiestaled.by/"><span>Перейти</span>
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000">
+                  <path d="M0 0h24v24H0V0z" fill="none"></path>
+                  <path d="M9.29 6.71c-.39.39-.39 1.02 0 1.41L13.17 12l-3.88 3.88c-.39.39-.39 1.02 0 1.41.39.39 1.02.39 1.41 0l4.59-4.59c.39-.39.39-1.02 0-1.41L10.7 6.7c-.38-.38-1.02-.38-1.41.01z"></path>
+                </svg></a>
+            </div>
+            <div class="projects-block__item">
+              <div class="image">
+                <picture>
+                  <source srcset="/img/projects/2.webp" type="image/webp"><img class="lazyload" loading="lazy" data-src="/img/projects/2.png">
+                </picture>
+              </div>
+              <div class="title">ИНТЕР ТОБАККО</div>
+              <div class="desc">ООО Интер Тобакко – это молодое предприятие по выпуску табачной продукции в Беларуси</div><a class="link" href="https://intertobacco.by/"><span>Перейти</span>
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000">
+                  <path d="M0 0h24v24H0V0z" fill="none"></path>
+                  <path d="M9.29 6.71c-.39.39-.39 1.02 0 1.41L13.17 12l-3.88 3.88c-.39.39-.39 1.02 0 1.41.39.39 1.02.39 1.41 0l4.59-4.59c.39-.39.39-1.02 0-1.41L10.7 6.7c-.38-.38-1.02-.38-1.41.01z"></path>
+                </svg></a>
+            </div>
+            <div class="projects-block__item">
+              <div class="image">
+                <picture>
+                  <source srcset="/img/projects/3.webp" type="image/webp"><img class="lazyload" loading="lazy" data-src="/img/projects/3.png">
+                </picture>
+              </div>
+              <div class="title">Стальной дом</div>
+              <div class="desc">Магазин дверей в Минске - межкомнатные и входные двери «Стальной дом»</div><a class="link" href="https://dverimarket.by/"><span>Перейти</span>
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000">
+                  <path d="M0 0h24v24H0V0z" fill="none"></path>
+                  <path d="M9.29 6.71c-.39.39-.39 1.02 0 1.41L13.17 12l-3.88 3.88c-.39.39-.39 1.02 0 1.41.39.39 1.02.39 1.41 0l4.59-4.59c.39-.39.39-1.02 0-1.41L10.7 6.7c-.38-.38-1.02-.38-1.41.01z"></path>
+                </svg></a>
+            </div>
+            <div class="projects-block__item">
+              <div class="image">
+                <picture>
+                  <source srcset="/img/projects/4.webp" type="image/webp"><img class="lazyload" loading="lazy" data-src="/img/projects/4.png">
+                </picture>
+              </div>
+              <div class="title">МЕДВЕДЕВ И К</div>
+              <div class="desc">Магазин дверей белорусcкого производства с установкой в Минске «МЕДВЕДЕВ И К»</div><a class="link" href="https://medvedev.by/"><span>Перейти</span>
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000">
+                  <path d="M0 0h24v24H0V0z" fill="none"></path>
+                  <path d="M9.29 6.71c-.39.39-.39 1.02 0 1.41L13.17 12l-3.88 3.88c-.39.39-.39 1.02 0 1.41.39.39 1.02.39 1.41 0l4.59-4.59c.39-.39.39-1.02 0-1.41L10.7 6.7c-.38-.38-1.02-.38-1.41.01z"></path>
+                </svg></a>
+            </div>
+            <div class="projects-block__item">
+              <div class="image">
+                <picture>
+                  <source srcset="/img/projects/5.webp" type="image/webp"><img class="lazyload" loading="lazy" data-src="/img/projects/5.png">
+                </picture>
+              </div>
+              <div class="title">Актуальные компьютерные системы</div>
+              <div class="desc">Лендинг. Компьютерное и серверное оборудование для офиса</div><a class="link" href="https://tender-pc.ru/"><span>Перейти</span>
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000">
+                  <path d="M0 0h24v24H0V0z" fill="none"></path>
+                  <path d="M9.29 6.71c-.39.39-.39 1.02 0 1.41L13.17 12l-3.88 3.88c-.39.39-.39 1.02 0 1.41.39.39 1.02.39 1.41 0l4.59-4.59c.39-.39.39-1.02 0-1.41L10.7 6.7c-.38-.38-1.02-.38-1.41.01z"></path>
+                </svg></a>
+            </div>
+            <div class="projects-block__item">
+              <div class="image">
+                <picture>
+                  <source srcset="/img/projects/6.webp" type="image/webp"><img class="lazyload" loading="lazy" data-src="/img/projects/6.png">
+                </picture>
+              </div>
+              <div class="title">МЕРАТЕХ</div>
+              <div class="desc">Серверное оборудование в Минске. Поставщик серверного оборудования</div><a class="link" href="https://servera.by/"><span>Перейти</span>
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000">
+                  <path d="M0 0h24v24H0V0z" fill="none"></path>
+                  <path d="M9.29 6.71c-.39.39-.39 1.02 0 1.41L13.17 12l-3.88 3.88c-.39.39-.39 1.02 0 1.41.39.39 1.02.39 1.41 0l4.59-4.59c.39-.39.39-1.02 0-1.41L10.7 6.7c-.38-.38-1.02-.38-1.41.01z"></path>
+                </svg></a>
+            </div>
+            <div class="projects-block__item">
+              <div class="image">
+                <picture>
+                  <source srcset="/img/projects/7.webp" type="image/webp"><img class="lazyload" loading="lazy" data-src="/img/projects/7.png">
+                </picture>
+              </div>
+              <div class="title">ARTROOM</div>
+              <div class="desc">ARTROOM — профессиональный дизайн интерьера в Минске, проекты домов.</div><a class="link" href="https://artroom-design.com/ru/"><span>Перейти</span>
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000">
+                  <path d="M0 0h24v24H0V0z" fill="none"></path>
+                  <path d="M9.29 6.71c-.39.39-.39 1.02 0 1.41L13.17 12l-3.88 3.88c-.39.39-.39 1.02 0 1.41.39.39 1.02.39 1.41 0l4.59-4.59c.39-.39.39-1.02 0-1.41L10.7 6.7c-.38-.38-1.02-.38-1.41.01z"></path>
+                </svg></a>
+            </div>
+            <div class="projects-block__item">
+              <div class="image">
+                <picture>
+                  <source srcset="/img/projects/8.webp" type="image/webp"><img class="lazyload" loading="lazy" data-src="/img/projects/8.png">
+                </picture>
+              </div>
+              <div class="title">ГрузОК</div>
+              <div class="desc">Грузоперевозки и переезды по всей Беларуси</div><a class="link" href="https://gruzok.by/"><span>Перейти</span>
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000">
+                  <path d="M0 0h24v24H0V0z" fill="none"></path>
+                  <path d="M9.29 6.71c-.39.39-.39 1.02 0 1.41L13.17 12l-3.88 3.88c-.39.39-.39 1.02 0 1.41.39.39 1.02.39 1.41 0l4.59-4.59c.39-.39.39-1.02 0-1.41L10.7 6.7c-.38-.38-1.02-.38-1.41.01z"></path>
+                </svg></a>
+            </div>
+            <div class="projects-block__item">
+              <div class="image">
+                <picture>
+                  <source srcset="/img/projects/9.webp" type="image/webp"><img class="lazyload" loading="lazy" data-src="/img/projects/9.png">
+                </picture>
+              </div>
+              <div class="title">Эстемед</div>
+              <div class="desc">Центр медицинской косметологии "Эстемед" в г. Могилёв</div><a class="link" href="https://estemed.by/"><span>Перейти</span>
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000">
+                  <path d="M0 0h24v24H0V0z" fill="none"></path>
+                  <path d="M9.29 6.71c-.39.39-.39 1.02 0 1.41L13.17 12l-3.88 3.88c-.39.39-.39 1.02 0 1.41.39.39 1.02.39 1.41 0l4.59-4.59c.39-.39.39-1.02 0-1.41L10.7 6.7c-.38-.38-1.02-.38-1.41.01z"></path>
+                </svg></a>
+            </div>
+            <div class="projects-block__item">
+              <div class="image">
+                <picture>
+                  <source srcset="/img/projects/10.webp" type="image/webp"><img class="lazyload" loading="lazy" data-src="/img/projects/10.png">
+                </picture>
+              </div>
+              <div class="title">Дон Жуан</div>
+              <div class="desc">Сайт мюзикла «Дон Жуан. Нерассказанная история»</div><a class="link" href="https://donjuanmusical.ru/"><span>Перейти</span>
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000">
+                  <path d="M0 0h24v24H0V0z" fill="none"></path>
+                  <path d="M9.29 6.71c-.39.39-.39 1.02 0 1.41L13.17 12l-3.88 3.88c-.39.39-.39 1.02 0 1.41.39.39 1.02.39 1.41 0l4.59-4.59c.39-.39.39-1.02 0-1.41L10.7 6.7c-.38-.38-1.02-.38-1.41.01z"></path>
+                </svg></a>
+            </div>
+            <div class="projects-block__item">
+              <div class="image">
+                <picture>
+                  <source srcset="/img/projects/11.webp" type="image/webp"><img class="lazyload" loading="lazy" data-src="/img/projects/11.png">
+                </picture>
+              </div>
+              <div class="title">Доктор Лидер</div>
+              <div class="desc">Лендинг для ООО "Центр Инновационной Флебологии"</div><a class="link" href="https://myginecolog.ru/"><span>Перейти</span>
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000">
+                  <path d="M0 0h24v24H0V0z" fill="none"></path>
+                  <path d="M9.29 6.71c-.39.39-.39 1.02 0 1.41L13.17 12l-3.88 3.88c-.39.39-.39 1.02 0 1.41.39.39 1.02.39 1.41 0l4.59-4.59c.39-.39.39-1.02 0-1.41L10.7 6.7c-.38-.38-1.02-.38-1.41.01z"></path>
+                </svg></a>
+            </div>
+            <div class="projects-block__item">
+              <div class="image">
+                <picture>
+                  <source srcset="/img/projects/12.webp" type="image/webp"><img class="lazyload" loading="lazy" data-src="/img/projects/12.png">
+                </picture>
+              </div>
+              <div class="title">Газосиликат</div>
+              <div class="desc">Лендинг для компании “Газосиликат”. Производство и доставка бетона и раствора</div><a class="link" href="https://beton.gazosilicat.by/"><span>Перейти</span>
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000">
+                  <path d="M0 0h24v24H0V0z" fill="none"></path>
+                  <path d="M9.29 6.71c-.39.39-.39 1.02 0 1.41L13.17 12l-3.88 3.88c-.39.39-.39 1.02 0 1.41.39.39 1.02.39 1.41 0l4.59-4.59c.39-.39.39-1.02 0-1.41L10.7 6.7c-.38-.38-1.02-.38-1.41.01z"></path>
+                </svg></a>
+            </div>
+            <div class="projects-block__item">
+              <div class="image">
+                <picture>
+                  <source srcset="/img/projects/13.webp" type="image/webp"><img class="lazyload" loading="lazy" data-src="/img/projects/13.png">
+                </picture>
+              </div>
+              <div class="title">Food Expert</div>
+              <div class="desc">Конструктор прибыльной франшизы ресторанных и ритейл брендов. Находится в стадии тестирования заказчиком</div><a class="link" href="http://u1630212.isp.regruhosting.ru/"><span>Перейти</span>
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000">
+                  <path d="M0 0h24v24H0V0z" fill="none"></path>
+                  <path d="M9.29 6.71c-.39.39-.39 1.02 0 1.41L13.17 12l-3.88 3.88c-.39.39-.39 1.02 0 1.41.39.39 1.02.39 1.41 0l4.59-4.59c.39-.39.39-1.02 0-1.41L10.7 6.7c-.38-.38-1.02-.38-1.41.01z"></path>
+                </svg></a>
+            </div>
+            <div class="projects-block__item">
+              <div class="image">
+                <picture>
+                  <source srcset="/img/projects/14.webp" type="image/webp"><img class="lazyload" loading="lazy" data-src="/img/projects/14.png">
+                </picture>
+              </div>
+              <div class="title">TUDARU</div>
+              <div class="desc">Туристическое агентство TUDARU. Находится в стадии тестирования заказчиком</div><a class="link" href="https://tudaback.fvds.ru/"><span>Перейти</span>
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000">
+                  <path d="M0 0h24v24H0V0z" fill="none"></path>
+                  <path d="M9.29 6.71c-.39.39-.39 1.02 0 1.41L13.17 12l-3.88 3.88c-.39.39-.39 1.02 0 1.41.39.39 1.02.39 1.41 0l4.59-4.59c.39-.39.39-1.02 0-1.41L10.7 6.7c-.38-.38-1.02-.38-1.41.01z"></path>
+                </svg></a>
+            </div>
+            <div class="projects-block__item">
+              <div class="image">
+                <picture>
+                  <source srcset="/img/projects/15.webp" type="image/webp"><img class="lazyload" loading="lazy" data-src="/img/projects/15.png">
+                </picture>
+              </div>
+              <div class="title">Doctor Ron</div>
+              <div class="desc">Институт нитевой имплантологии. Находится в стадии backend - разработки</div><a class="link" href="https://drron.fvds.ru/"><span>Перейти</span>
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000">
+                  <path d="M0 0h24v24H0V0z" fill="none"></path>
+                  <path d="M9.29 6.71c-.39.39-.39 1.02 0 1.41L13.17 12l-3.88 3.88c-.39.39-.39 1.02 0 1.41.39.39 1.02.39 1.41 0l4.59-4.59c.39-.39.39-1.02 0-1.41L10.7 6.7c-.38-.38-1.02-.38-1.41.01z"></path>
+                </svg></a>
+            </div>
+            <div class="projects-block__item">
+              <div class="image">
+                <picture>
+                  <source srcset="/img/projects/16.webp" type="image/webp"><img class="lazyload" loading="lazy" data-src="/img/projects/16.png">
+                </picture>
+              </div>
+              <div class="title">Autofind</div>
+              <div class="desc">Личный кабинет по подбору автомобилей, компания “Autofind. Находится в стадии тестирования заказчиком</div><a class="link" href="https://autos.fvds.ru/"><span>Перейти</span>
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000">
+                  <path d="M0 0h24v24H0V0z" fill="none"></path>
+                  <path d="M9.29 6.71c-.39.39-.39 1.02 0 1.41L13.17 12l-3.88 3.88c-.39.39-.39 1.02 0 1.41.39.39 1.02.39 1.41 0l4.59-4.59c.39-.39.39-1.02 0-1.41L10.7 6.7c-.38-.38-1.02-.38-1.41.01z"></path>
+                </svg></a>
+            </div>
+            <div class="projects-block__item">
+              <div class="image">
+                <picture>
+                  <source srcset="/img/projects/17.webp" type="image/webp"><img class="lazyload" loading="lazy" data-src="/img/projects/17.png">
+                </picture>
+              </div>
+              <div class="title">Евромедика</div>
+              <div class="desc">Личный кабинет пациента клиники “Евромедика”, реализованный на фреймворке Vue.js. Находится в стадии backend - разработки</div><a class="link" href="https://evrom.fvds.ru/"><span>Перейти</span>
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000">
+                  <path d="M0 0h24v24H0V0z" fill="none"></path>
+                  <path d="M9.29 6.71c-.39.39-.39 1.02 0 1.41L13.17 12l-3.88 3.88c-.39.39-.39 1.02 0 1.41.39.39 1.02.39 1.41 0l4.59-4.59c.39-.39.39-1.02 0-1.41L10.7 6.7c-.38-.38-1.02-.38-1.41.01z"></path>
+                </svg></a>
+            </div>
+            <div class="projects-block__item">
+              <div class="image">
+                <picture>
+                  <source srcset="/img/projects/18.webp" type="image/webp"><img class="lazyload" loading="lazy" data-src="/img/projects/18.png">
+                </picture>
+              </div>
+              <div class="title">Другие проекты</div>
+              <div class="desc">Принимал участие в доработках уже существующих проектов:<br><a href='https://autofrant.ru/'> - Autofrant</a><br><a href='https://fezmogilev.by/'> - СЕЗ Могилев</a><br><a href='https://tk-astra.ru/'> - ТК Астра</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
       <div class="popup__wrp" id="callback">
         <div class="popup popup-callback">
           <div class="popup-close"><a href="#close">
@@ -302,18 +539,27 @@
       <div class="container">
         <div class="footer">
           <div class="footer-desc">
-            <div class="footer-desc__logo"><img src="img/common/image.jpg" alt="" width="48" height="48"></div>
+            <div class="footer-desc__logo">
+              <picture>
+                <source srcset="img/common/image.webp" type="image/webp"><img class="lazyload" loading="lazy" data-src="img/common/image.jpg" alt="" width="48" height="48">
+              </picture>
+            </div>
             <div class="footer-desc__text">
               <p>
-                I'm Vlad Yukhnovski, front-end developer at Promicom Develop LLC.<br>
-                This website was created to showcase my projects. <br>
-                Interested in work together? Let's talk
+                Этот веб-сайт был создан для демонстрации реализованных мною проектов.<br>
+                Заинтересованы поработать вместе? Давайте пообщаемся
               </p>
             </div>
+            <ul class="footer-desc__links">
+              <li><a href="https://github.com/vladyuh">GitHub</a></li>
+              <li><a href="https://www.linkedin.com/in/vlad-yukhnovski-247787239/">LinkedIn</a></li>
+              <li><a href="https://t.me/valdis_1997">Telegram</a></li>
+              <!--li: a(href="mailto:vladuks123.vv@gmail.com") Email-->
+            </ul>
           </div>
           <div class="footer-feedback">
             <ul>
-              <li><a href="#feedback">Feedback</a></li>
+              <li><a href="mailto:vladuks123.vv@gmail.com">Обратная связь</a></li>
             </ul>
           </div>
         </div>

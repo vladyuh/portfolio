@@ -8,8 +8,10 @@ include ../blocks/components/table/table.pug
 include ../blocks/components/popup/popup.pug
 
 
+
+
 block variables
-    - const title = "Главная"
+    - const title = "Портфолио"
 
 block content
 
@@ -18,67 +20,69 @@ block content
             .pageTitle__wrp
                 .pageTitle__image(style='background-image: url(https://etooools.herokuapp.com/media/backs/1.jpg)')
                 h1.section-h1.pageTitle__text
-                    | Hello,
+                    | Привет,
                     br
-                    |  I'm Vlad Yukhnovski
+                    |  Я Влад Юхновский
                 .desc
-                    | Front-end developer at Promicom Develop LLC.
+                    | Фронтенд разработчик, ООО&nbsp;"Промиком Девелоп"
 
     .page-nav
         .container
             .page-nav__links
-                a(href="#about").page-nav__link About me
-                a(href="#projects").page-nav__link Projects
+                a(href="#about").page-nav__link.is-active Обо мне
+                a(href="#projects").page-nav__link Проекты
 
 
-    .about-block#about
+    .about-block.page-block.is-active#about
         .container
             .about-block__items
                 .about-block__item
-                    .title Education
+                    .title Образование
                     .box-items
                         .box
-                            .box-icon: img(src="/img/common/msu.jpg" width="48" height="48")
+                            .box-icon
+                                picture
+                                    source(srcset="img/common/msu.webp" type="image/webp")
+                                    img(loading="lazy" class="lazyload" data-src="img/common/msu.jpg" width="48" height="48")
                             .box-text
-                                .box-text__caption Mogilev State University
-                                .box-text__name Computer Science
+                                .box-text__caption МГУ им. А.А. Кулешова
+                                .box-text__name Информатика
                             .box-address
-                                .box-address__since Sept. 2015 - Jul. 2019
+                                .box-address__since Сент. 2015 - Июл. 2019
                                 .box-address__location
-                                    +icons("#ic_location",24)
-                                    span Mogilev
                         .box
                             .box-icon: +icons('#ic_web', 36)
                             .box-text
-                                .box-text__caption Internet
-                                .box-text__name Self-learning and others
+                                .box-text__caption Интернет
+                                .box-text__name Самообучение и т.д
                             .box-address
-                                .box-address__since 2019 - Present
+                                .box-address__since 2019 - н.в.
+                                .box-address__location
                 .about-block__item
-                    .title Experience
+                    .title Опыт
                     .box-items
                         .box
                             .box-icon: +icons('#promicom_logo', 36)
                             .box-text
-                                .box-text__caption Front-end developer
-                                .box-text__name Promicom Group
+                                .box-text__caption Фронтенд разработчик
+                                .box-text__name Промиком Групп
                             .box-address
-                                .box-address__since Sept. 2019 - Feb. 2020
+                                .box-address__since Сент. 2019 - Фев. 2020
                                 .box-address__location
                                     +icons("#ic_location",24)
-                                    span Mogilev
+                                    span Могилев
                         .box
                             .box-icon: +icons('#promicom_logo', 36)
                             .box-text
-                                .box-text__caption Front-end developer
-                                .box-text__name Promicom Develop LLC.
+                                .box-text__caption Фронтенд разработчик
+                                .box-text__name Промиком Девелоп
                             .box-address
-                                .box-address__since Feb. 2020 - Present
+                                .box-address__since Фев. 2020 - н.в.
                                 .box-address__location
                                     +icons("#ic_location",24)
-                                    span Mogilev
+                                    span Могилев
                 .about-block__item
-                    .title Skills
+                    .title Навыки
                     .box-items.box-items--small
                         .box.box--small
                             .box-text
@@ -105,7 +109,7 @@ block content
                             .box-text
                                 .box-text__name Gulp
                 .about-block__item
-                    .title Tools
+                    .title Инструменты
                     .box-items.box-items--small
                         .box.box--small
                             .box-text
@@ -132,6 +136,170 @@ block content
                             .box-text
                                 .box-text__name NPM
 
+
+
+    .projects-block.page-block#projects
+        .container
+            .projects-block__items
+
+                -
+                    var values = [
+                        {
+                            image: "/img/projects/1",
+                            title: "Fiesta LED",
+                            desc:
+                                    "Сайт для компании FiestaLED." +
+                                    "Компания FiestaLED производит светодиодные экраны для " +
+                                    "внутренней и наружной рекламы.",
+                            link: "https://fiestaled.by/"
+                        },
+                        {
+                            image: "/img/projects/2",
+                            title: "ИНТЕР ТОБАККО",
+                            desc:
+                                    "ООО Интер Тобакко – это молодое предприятие " +
+                                    "по выпуску табачной продукции в Беларуси",
+                            link: "https://intertobacco.by/"
+                        },
+                        {
+                            image: "/img/projects/3",
+                            title: "Стальной дом",
+                            desc:
+                                    "Магазин дверей в Минске - межкомнатные" +
+                                    " и входные двери «Стальной дом»",
+                            link: "https://dverimarket.by/"
+                        },
+                        {
+                            image: "/img/projects/4",
+                            title: "МЕДВЕДЕВ И К",
+                            desc:
+                                    "Магазин дверей белорусcкого производства с установкой в Минске" +
+                                    " «МЕДВЕДЕВ И К»",
+                            link: "https://medvedev.by/"
+                        },
+                        {
+                            image: "/img/projects/5",
+                            title: "Актуальные компьютерные системы",
+                            desc:
+                                    "Лендинг. Компьютерное и серверное оборудование для офиса",
+                            link: "https://tender-pc.ru/"
+                        },
+                        {
+                            image: "/img/projects/6",
+                            title: "МЕРАТЕХ",
+                            desc:
+                                    "Серверное оборудование в Минске. Поставщик серверного оборудования",
+                            link: "https://servera.by/"
+                        },
+                        {
+                            image: "/img/projects/7",
+                            title: "ARTROOM",
+                            desc:
+                                    "ARTROOM — профессиональный дизайн интерьера в Минске, проекты домов.",
+                            link: "https://artroom-design.com/ru/"
+                        },
+                        {
+                            image: "/img/projects/8",
+                            title: "ГрузОК",
+                            desc:
+                                    "Грузоперевозки и переезды по всей Беларуси",
+                            link: "https://gruzok.by/"
+                        },
+                        {
+                            image: "/img/projects/9",
+                            title: "Эстемед",
+                            desc:
+                                    "Центр медицинской косметологии \"Эстемед\" в г. Могилёв",
+                            link: "https://estemed.by/"
+                        },
+                        {
+                            image: "/img/projects/10",
+                            title: "Дон Жуан",
+                            desc:
+                                    "Сайт мюзикла «Дон Жуан. Нерассказанная история»",
+                            link: "https://donjuanmusical.ru/"
+                        },
+                        {
+                            image: "/img/projects/11",
+                            title: "Доктор Лидер",
+                            desc:
+                                    "Лендинг для ООО \"Центр Инновационной Флебологии\"",
+                            link: "https://myginecolog.ru/"
+                        },
+                        {
+                            image: "/img/projects/12",
+                            title: "Газосиликат",
+                            desc:
+                                    "Лендинг для компании “Газосиликат”. " +
+                                    "Производство и доставка бетона и раствора",
+                            link: "https://beton.gazosilicat.by/"
+                        },
+                        {
+                            image: "/img/projects/13",
+                            title: "Food Expert",
+                            desc:
+                                    "Конструктор прибыльной франшизы ресторанных и ритейл брендов. " +
+                                    "Находится в стадии тестирования заказчиком",
+                            link: "http://u1630212.isp.regruhosting.ru/"
+                        },
+                        {
+                            image: "/img/projects/14",
+                            title: "TUDARU",
+                            desc:
+                                    "Туристическое агентство TUDARU. " +
+                                    "Находится в стадии тестирования заказчиком",
+                            link: "https://tudaback.fvds.ru/"
+                        },
+                        {
+                            image: "/img/projects/15",
+                            title: "Doctor Ron",
+                            desc:
+                                    "Институт нитевой имплантологии. " +
+                                    "Находится в стадии backend - разработки",
+                            link: "https://drron.fvds.ru/"
+                        },
+                        {
+                            image: "/img/projects/16",
+                            title: "Autofind",
+                            desc:
+                                    "Личный кабинет по подбору автомобилей, компания “Autofind. " +
+                                    "Находится в стадии тестирования заказчиком",
+                            link: "https://autos.fvds.ru/"
+                        },
+                        {
+                            image: "/img/projects/17",
+                            title: "Евромедика",
+                            desc:
+                                    "Личный кабинет пациента клиники “Евромедика”, " +
+                                    "реализованный на фреймворке Vue.js. " +
+                                    "Находится в стадии backend - разработки",
+                            link: "https://evrom.fvds.ru/"
+                        },
+                        {
+                            image: "/img/projects/18",
+                            title: "Другие проекты",
+                            desc:
+                                    "Принимал участие в доработках уже существующих проектов:" +
+                                    "<br><a href='https://autofrant.ru/'> - Autofrant</a>" +
+                                    "<br><a href='https://fezmogilev.by/'> - СЕЗ Могилев</a>" +
+                                    "<br><a href='https://tk-astra.ru/'> - ТК Астра</a>" ,
+                        }
+                    ];
+
+                each item in values
+                    .projects-block__item
+                        .image
+                            picture
+                                source(srcset=item.image + ".webp" type="image/webp")
+                                img(loading="lazy" class="lazyload" data-src=item.image + ".png")
+                        .title!=item.title
+                        .desc!= item.desc
+                        if item.link
+                            a(href=item.link).link
+                                span Перейти
+                                svg(xmlns='http://www.w3.org/2000/svg' height='24px' viewBox='0 0 24 24' width='24px' fill='#000000')
+                                    path(d='M0 0h24v24H0V0z' fill='none')
+                                    path(d='M9.29 6.71c-.39.39-.39 1.02 0 1.41L13.17 12l-3.88 3.88c-.39.39-.39 1.02 0 1.41.39.39 1.02.39 1.41 0l4.59-4.59c.39-.39.39-1.02 0-1.41L10.7 6.7c-.38-.38-1.02-.38-1.41.01z')
 
     +callbackPopup()
 block scripts

@@ -26,10 +26,11 @@ html(lang="ru")
 		link(rel="apple-touch-icon" sizes="180x180" href="img/favicons/apple-touch-icon-180x180.png")
 		link(rel="apple-touch-icon" sizes="1024x1024" href="img/favicons/apple-touch-icon-1024x1024.png")
 		link(rel="stylesheet" href="styles/main.css")
-		link(rel="preconnect" href="https://fonts.googleapis.com")
-		link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
-		link(href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet")
-		
+		link(rel="prefetch" href="img/sprites/sprite.svg" as="image" crossorigin="")
+		link(rel="preload" href="fonts/ProductSans-Bold.woff" as="font" crossorigin="")
+		link(rel="preload" href="fonts/ProductSans-Medium.woff" as="font" crossorigin="")
+		link(rel="preload" href="fonts/ProductSans-Regular.woff" as="font" crossorigin="")
+
 	body.perf-no-animation.page
 		include ../../blocks/modules/header/header.pug
 		include ../../blocks/components/mobileMenu/mobileMenu.pug
